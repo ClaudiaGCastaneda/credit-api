@@ -1,0 +1,20 @@
+[
+    {
+      "minAge": 18,
+      "maxAge": 25,
+      "creditLine": 3000.00,
+      "active": true
+    },
+    {
+      "minAge": 26,
+      "maxAge": 30,
+      "creditLine": 5000.00,
+      "active": true
+    },
+    {
+      "minAge": 31,
+      "maxAge": 65,
+      "creditLine": 8000.00,
+      "active": true
+    }
+  ]

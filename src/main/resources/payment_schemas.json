@@ -1,0 +1,16 @@
+[
+    {
+      "description": "Schema 1",
+      "orderId": 1,
+      "paymentNumbers": 5,
+      "frequency": "Biweekly",
+      "interestRate": 0.13
+    },
+    {
+      "description": "Schema 2",
+      "orderId": 2,
+      "paymentNumbers": 10,
+      "frequency": "Biweekly",
+      "interestRate": 0.16
+    }
+  ]
