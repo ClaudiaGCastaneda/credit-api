@@ -110,8 +110,8 @@ public class SeedServiceImpl implements SeedService {
                 roleRepository.deleteAll(); // Borra roles existentes
                 logger.info("Roles existentes borrados.");
 
-                Role adminRole = new Role("ADMIN");
-                Role userRole = new Role("USER");
+                Role adminRole = new Role("ROLE_ADMIN");
+                Role userRole = new Role("ROLE_USER");
 
                 List<Role> rolesToInsert = Arrays.asList(adminRole, userRole);
                 roleRepository.saveAll(rolesToInsert);

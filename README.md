@@ -28,7 +28,7 @@ Follow these steps to get your project up and running on your local machine.
 3.  **Spin up the database and init application with Docker compose:**
  
     ```bash
-    docker-compose up -d
+    docker-compose up -d --build
     ```
 
 The application should start on `http://localhost:8080` (or your configured port).
@@ -52,6 +52,17 @@ The API exposes several endpoints to interact with the credit and purchase manag
 ## **Example Endpoint: User Registration**
 
 `POST /v1/users/register`
+
+```json
+{
+    "username": "admin",
+    "password": "12345"
+}
+```
+
+## **Example Endpoint: Get Access Token**
+
+`POST /v1/users/login`
 
 ```json
 {

@@ -11,7 +11,7 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Etapa 2: Ejecución
+# Etapa 2: Ejecuciónv
 FROM eclipse-temurin:17-jdk
 
 VOLUME /tmp

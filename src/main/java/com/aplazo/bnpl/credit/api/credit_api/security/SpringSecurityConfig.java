@@ -37,7 +37,9 @@ public class SpringSecurityConfig {
                 // .requestMatchers("/v1/users").permitAll()
                 .requestMatchers(HttpMethod.GET, "/v1/users").permitAll()
                 .requestMatchers(HttpMethod.POST, "/v1/users/register").permitAll()
+                .requestMatchers(HttpMethod.POST, "/v1/seed").permitAll()
                 .requestMatchers(HttpMethod.POST, "/v1/customers").hasRole("USER")
+                .requestMatchers(HttpMethod.POST, "/v1/loans").hasRole("USER")
                 // .requestMatchers(HttpMethod.GET, "/api/products",
                 // "/api/products/{id}").hasAnyRole("ADMIN", "USER")
                 // .requestMatchers(HttpMethod.POST, "/api/products").hasRole("ADMIN")
@@ -45,6 +47,8 @@ public class SpringSecurityConfig {
                 // .requestMatchers(HttpMethod.DELETE, "/api/products/{id}").hasRole("ADMIN")
                 .anyRequest().authenticated())
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
+                // .addFilterBefore(new JwtValidationFilter(authenticationManager()),
+                // UsernamePasswordAuthenticationFilter.class)
                 .addFilter(new JwtValidationFilter(authenticationManager()))
                 .csrf(config -> config.disable())
                 // .cors(cors -> cors.configurationSource(corsConfigurationSource()))

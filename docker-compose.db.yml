@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:14.4
+    container_name: bnpl_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=MySecretPassword
+      - POSTGRES_DB=bnpl_db
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    restart: unless-stopped

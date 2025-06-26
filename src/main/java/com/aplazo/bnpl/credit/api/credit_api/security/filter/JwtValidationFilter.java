@@ -38,6 +38,8 @@ public class JwtValidationFilter extends BasicAuthenticationFilter {
 
         String header = request.getHeader(HEADER_AUTHORIZATION);
 
+        System.out.println("Holaaaa");
+
         if (header == null || !header.startsWith(PREFIX_TOKEN)) {
             chain.doFilter(request, response);
             return;
@@ -45,8 +47,13 @@ public class JwtValidationFilter extends BasicAuthenticationFilter {
         String token = header.replace(PREFIX_TOKEN, "");
 
         try {
+            System.out.println("en el try");
             Claims claims = Jwts.parser().verifyWith(SECRET_KEY).build().parseSignedClaims(token).getPayload();
+
+            System.out.println("claims" + claims);
             String usename = claims.getSubject();
+
+            System.out.println(usename);
 
             Object authoritiesClaims = claims.get("authorities");
 
