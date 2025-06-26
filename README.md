@@ -33,8 +33,6 @@ Follow these steps to get your project up and running on your local machine.
 
 The application should start on `http://localhost:8080` (or your configured port).
 
-4.  **Run the Spring Boot application:**
-
 5.  **Load Catalogs and Initial Data:**
     Once the application is running, open your browser or use a tool like Postman/cURL to hit the `seed` endpoint. This will load necessary catalogs (e.g., credit line rules, payment schemas, roles) into the database.
     ```
